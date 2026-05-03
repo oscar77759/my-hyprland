@@ -1,0 +1,68 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "margin": "8 10 0 10",
+
+    "modules-left": ["hyprland/workspaces", "custom/music"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "bluetooth", "network", "cpu", "memory", "custom/power", "tray"],
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate"
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "<big>{:%A, %d %B %Y}</big>"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 Muted",
+        "on-click": "pavucontrol"
+    },
+
+    "bluetooth": {
+        "format": " {status}",
+        "format-connected": " {device_alias}",
+        "on-click": "blueman-manager"
+    },
+
+    "network": {
+        "format-wifi": " {essid}",
+        "format-ethernet": "󰈀 Wired",
+        "format-disconnected": "󰤮 Disconnected",
+        "on-click": "nm-connection-editor",
+        "interval": 3
+    },
+
+    "cpu": {
+        "format": " {usage}% ({avg_frequency} GHz)",
+        "interval": 2
+    },
+
+    "memory": {
+        "format": " {used}GB / {total}GB",
+        "interval": 2,
+        "tooltip-format": "Used: {used} GiB\nAvailable: {avail} GiB"
+}
+    "custom/music": {
+        "format": " {}",
+        "exec": "playerctl -s metadata --format '{{artist}} - {{title}}' || echo 'No music'",
+        "interval": 5,
+        "max-length": 60,
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "return-type": "text"
+    },
+    "custom/power": {
+        "format": "⚡ {}",
+        "exec": "~/.config/waybar/power_mode.sh",
+        "return-type": "json",
+        "on-click": "~/.config/waybar/power_mode.sh cycle",
+        "interval": 5
+    },
+
+    "tray": { "spacing": 8 }
+}

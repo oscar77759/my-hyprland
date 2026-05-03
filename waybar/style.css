@@ -1,0 +1,60 @@
+* {
+    font-family: "JetBrains Mono", "FiraCode Nerd Font", monospace;
+    font-size: 14px;
+}
+
+window#waybar {
+    background: rgba(15, 15, 25, 0.92);
+    color: #c084fc;
+    border-bottom: 3px solid #f472b6;
+}
+
+#workspaces button {
+    color: #c084fc;
+    padding: 4px 12px;
+    margin: 2px 1px;
+    font-size: 16px;
+}
+
+#workspaces button.active {
+    color: #f472b6;
+    background: rgba(244, 114, 182, 0.2);
+}
+
+#clock {
+    color: #f472b6;
+    font-weight: bold;
+    font-size: 15.5px;
+    padding: 0 15px;
+}
+
+/* Make all modules bigger & purple */
+#pulseaudio,
+#bluetooth,
+#network,
+#cpu,
+#memory,
+#custom-music,
+#custom-power,
+#tray {
+    padding: 0 16px;
+    font-size: 15px;
+    min-width: 40px;
+    color: #c084fc;
+}
+
+#custom-music { color: #e0a3ff; }
+#custom-power { color: #67e8f9; }
+#clock { color: #f472b6; }
+
+/* Hover effect */
+#pulseaudio:hover,
+#bluetooth:hover,
+#network:hover,
+#cpu:hover,
+#memory:hover,
+#custom-music:hover,
+#custom-power:hover {
+    background: rgba(192, 132, 252, 0.15);
+    color: #f472b6;
+}
